@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link, useLocation } from 'wouter';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,57 +26,48 @@ export default function Navigation() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/20 backdrop-blur-md border-b border-border/30' 
-          : 'bg-transparent'
+          ? 'bg-black/20 backdrop-blur-md border-b border-white/20' 
+          : 'bg-black/10 backdrop-blur-sm'
       }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="px-6 mx-auto max-w-7xl lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-serif font-bold text-primary">BANIGALA</h1>
+            <h1 className="font-serif text-2xl font-bold text-white">BANIGALA</h1>
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="text-foreground hover:text-primary transition-colors"
-              data-testid="link-home"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('services')}
-              className="text-foreground hover:text-primary transition-colors"
-              data-testid="link-services"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-foreground hover:text-primary transition-colors"
-              data-testid="link-about"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection('menu')}
-              className="text-foreground hover:text-primary transition-colors"
-              data-testid="link-menu"
-            >
-              Menu
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="text-foreground hover:text-primary transition-colors"
-              data-testid="link-contact"
-            >
-              Contact
-            </button>
+          <div className="items-center hidden gap-8 md:flex">
+            <Link href="/">
+              <button className="transition-colors text-white/90 hover:text-white" data-testid="link-home">
+                Home
+              </button>
+            </Link>
+            <Link href="/about">
+              <button className="transition-colors text-white/90 hover:text-white" data-testid="link-about">
+                About
+              </button>
+            </Link>
+            <Link href="/services">
+              <button className="transition-colors text-white/90 hover:text-white" data-testid="link-services">
+                Services
+              </button>
+            </Link>
+            <Link href="/menu">
+              <button className="transition-colors text-white/90 hover:text-white" data-testid="link-menu">
+                Menu
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button className="transition-colors text-white/90 hover:text-white" data-testid="link-contact">
+                Contact
+              </button>
+            </Link>
+
             <Button
               variant="default"
               onClick={() => console.log('Book table clicked')}
               data-testid="button-book-table"
             >
-              Book a Table
+              ORDER ONLINE
             </Button>
           </div>
 
@@ -86,57 +78,48 @@ export default function Navigation() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               data-testid="button-menu-toggle"
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
           </div>
         </div>
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background">
+        <div className="border-t md:hidden border-border bg-background">
           <div className="px-6 py-4 space-y-4">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
-              data-testid="mobile-link-home"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('services')}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
-              data-testid="mobile-link-services"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
-              data-testid="mobile-link-about"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection('menu')}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
-              data-testid="mobile-link-menu"
-            >
-              Menu
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
-              data-testid="mobile-link-contact"
-            >
-              Contact
-            </button>
+            <Link href="/">
+              <button className="block w-full py-2 text-left transition-colors text-foreground hover:text-primary" data-testid="mobile-link-home">
+                Home
+              </button>
+            </Link>
+            <Link href="/about">
+              <button className="block w-full py-2 text-left transition-colors text-foreground hover:text-primary" data-testid="mobile-link-about">
+                About
+              </button>
+            </Link>
+            <Link href="/services">
+              <button className="block w-full py-2 text-left transition-colors text-foreground hover:text-primary" data-testid="mobile-link-services">
+                Services
+              </button>
+            </Link>
+            <Link href="/menu">
+              <button className="block w-full py-2 text-left transition-colors text-foreground hover:text-primary" data-testid="mobile-link-menu">
+                Menu
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button className="block w-full py-2 text-left transition-colors text-foreground hover:text-primary" data-testid="mobile-link-contact">
+                Contact
+              </button>
+            </Link>
+
             <Button
               variant="default"
               className="w-full"
-              onClick={() => console.log('Book table clicked')}
-              data-testid="mobile-button-book-table"
+              onClick={() => console.log('Order online clicked')}
+              data-testid="mobile-button-order-online"
             >
-              Book a Table
+              ORDER ONLINE
             </Button>
           </div>
         </div>
