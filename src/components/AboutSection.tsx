@@ -1,47 +1,178 @@
 import { Button } from '@/components/ui/button';
-import chefImg from '@assets/generated_images/Chef_preparing_traditional_food_e23d5c64.png';
+import punjabiFoodImg from '@assets/images/punjabifood.png';
+import badshahiImg from '@assets/images/badshahi.png';
+import culturalImg from '@assets/images/havaliindian.png';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <div className="relative h-[500px] rounded-xl overflow-hidden">
-              <img
-                src={chefImg}
-                alt="Chef preparing traditional Pakistani food"
-                className="w-full h-full object-cover"
-                data-testid="img-chef"
-              />
-            </div>
-          </div>
+    <section id="about" className="bg-muted/30">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative">
+          <img
+            src={punjabiFoodImg}
+            alt="Traditional Pakistani Food"
+            className="w-full h-[800px] object-cover"
+            data-testid="img-food"
+          />
+        </div>
 
-          <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
-              The Finest Pakistani Cuisine
-            </h2>
-            <div className="space-y-4 text-muted-foreground">
-              <p className="text-lg">
-                At Banigala, we take immense pride in serving authentic Pakistani cuisine, prepared with the finest ingredients and using traditional cooking methods passed down through generations.
-              </p>
-              <p className="text-lg">
-                Every dish is carefully crafted with fresh, in-house made spices, slow-cooked to perfection, and rooted in the rich culinary traditions of Pakistan. From the bold, aromatic Nihari to the comforting warmth of Biryani, our menu features a wide array of dishes that transport your taste buds to the heart of South Asia.
-              </p>
-              <p className="text-lg">
-                Whether you're craving a hearty Karahi, sizzling Kebabs, or fresh vegetarian delights, Banigala brings you the true taste of Pakistan, made from scratch to ensure the highest quality. Transport yourself back home with every bite.
-              </p>
+        <div className="relative">
+          <div className="absolute inset-0">
+            <img
+              src={badshahiImg}
+              alt="Badshahi Mosque"
+              className="object-cover w-full h-full opacity-70"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30" />
+          </div>
+          
+          <div className="relative z-10 flex items-center h-[800px] p-8 text-white">
+            <div className="mt-8 space-y-6">
+              <h2 className="font-serif text-4xl font-bold text-yellow-400 md:text-5xl">
+                The Finest Pakistani Cuisine
+              </h2>
+              <div className="space-y-4">
+                <p className="text-lg leading-relaxed">
+                  At Banigala, we take immense pride in serving authentic Pakistani cuisine, prepared with the finest ingredients and using traditional cooking methods. Every dish is carefully crafted with fresh, in-house made spices, slow-cooked to perfection, and rooted in the rich culinary traditions of Pakistan. From the bold, aromatic Nihari to the comforting warmth of Biryani, our menu features a wide array of dishes that transport your taste buds to the heart of South Asia. Whether you're craving a hearty Karahi, sizzling Kebabs, or fresh vegetarian delights, Banigala brings you the true taste of Pakistan, made from scratch to ensure the highest quality. Transport yourself back home with every bite.
+                </p>
+              </div>
+              <Button
+                size="lg"
+                className="px-8 py-3 font-semibold text-white bg-yellow-600 rounded-full hover:bg-yellow-700"
+                onClick={() => console.log('About Banigala clicked')}
+                data-testid="button-about-banigala"
+              >
+                About Banigala
+              </Button>
             </div>
-            <Button
-              size="lg"
-              onClick={() => console.log('Learn more clicked')}
-              data-testid="button-learn-more"
-            >
-              Learn More About Us
-            </Button>
           </div>
         </div>
       </div>
+      
+      <div className="relative px-6 py-64 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-center bg-cover"
+          style={{
+            backgroundImage: `url(${culturalImg})`,
+            backgroundAttachment: 'fixed',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+      </div>
+
+      {/* //part 2 */}
+
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        
+        <div className="relative">
+          <div className="absolute inset-0">
+            <img
+              src={badshahiImg}
+              alt="Badshahi Mosque"
+              className="object-cover w-full h-full opacity-70"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30" />
+          </div>
+          
+          <div className="relative z-10 flex items-center h-[800px] p-8 text-white">
+            <div className="mt-8 space-y-6">
+              <h2 className="font-serif text-4xl font-bold text-yellow-400 md:text-5xl">
+                The Finest Pakistani Cuisine
+              </h2>
+              <div className="space-y-4">
+                <p className="text-lg leading-relaxed">
+                  At Banigala, we take immense pride in serving authentic Pakistani cuisine, prepared with the finest ingredients and using traditional cooking methods. Every dish is carefully crafted with fresh, in-house made spices, slow-cooked to perfection, and rooted in the rich culinary traditions of Pakistan. From the bold, aromatic Nihari to the comforting warmth of Biryani, our menu features a wide array of dishes that transport your taste buds to the heart of South Asia. Whether you're craving a hearty Karahi, sizzling Kebabs, or fresh vegetarian delights, Banigala brings you the true taste of Pakistan, made from scratch to ensure the highest quality. Transport yourself back home with every bite.
+                </p>
+              </div>
+              <Button
+                size="lg"
+                className="px-8 py-3 font-semibold text-white bg-yellow-600 rounded-full hover:bg-yellow-700"
+                onClick={() => console.log('About Banigala clicked')}
+                data-testid="button-about-banigala"
+              >
+                About Banigala
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative">
+          <img
+            src={punjabiFoodImg}
+            alt="Traditional Pakistani Food"
+            className="w-full h-[800px] object-cover"
+            data-testid="img-food"
+          />
+        </div>
+
+      </div>
+      
+      <div className="relative px-6 py-64 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-center bg-cover"
+          style={{
+            backgroundImage: `url(${culturalImg})`,
+            backgroundAttachment: 'fixed',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+      </div>
+
+      {/* part 3 */}
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative">
+          <img
+            src={punjabiFoodImg}
+            alt="Traditional Pakistani Food"
+            className="w-full h-[800px] object-cover"
+            data-testid="img-food"
+          />
+        </div>
+
+        <div className="relative">
+          <div className="absolute inset-0">
+            <img
+              src={badshahiImg}
+              alt="Badshahi Mosque"
+              className="object-cover w-full h-full opacity-70"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30" />
+          </div>
+          
+          <div className="relative z-10 flex items-center h-[800px] p-8 text-white">
+            <div className="mt-8 space-y-6">
+              <h2 className="font-serif text-4xl font-bold text-yellow-400 md:text-5xl">
+                The Finest Pakistani Cuisine
+              </h2>
+              <div className="space-y-4">
+                <p className="text-lg leading-relaxed">
+                  At Banigala, we take immense pride in serving authentic Pakistani cuisine, prepared with the finest ingredients and using traditional cooking methods. Every dish is carefully crafted with fresh, in-house made spices, slow-cooked to perfection, and rooted in the rich culinary traditions of Pakistan. From the bold, aromatic Nihari to the comforting warmth of Biryani, our menu features a wide array of dishes that transport your taste buds to the heart of South Asia. Whether you're craving a hearty Karahi, sizzling Kebabs, or fresh vegetarian delights, Banigala brings you the true taste of Pakistan, made from scratch to ensure the highest quality. Transport yourself back home with every bite.
+                </p>
+              </div>
+              <Button
+                size="lg"
+                className="px-8 py-3 font-semibold text-white bg-yellow-600 rounded-full hover:bg-yellow-700"
+                onClick={() => console.log('About Banigala clicked')}
+                data-testid="button-about-banigala"
+              >
+                About Banigala
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="relative px-6 py-64 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-center bg-cover"
+          style={{
+            backgroundImage: `url(${culturalImg})`,
+            backgroundAttachment: 'fixed',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+      </div>
+      
     </section>
   );
 }
