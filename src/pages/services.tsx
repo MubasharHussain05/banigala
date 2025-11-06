@@ -9,7 +9,7 @@ export default function Services() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-white">
+      <section className="relative flex items-center justify-center h-screen text-white">
         <div
           className="absolute inset-0 bg-center bg-cover"
           style={{
@@ -17,13 +17,12 @@ export default function Services() {
             backgroundAttachment: 'fixed',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
-        
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-yellow-400">
+         
+        <div className="relative z-10 max-w-4xl px-4 mx-auto text-center">
+          <h1 className="mb-6 text-6xl font-bold text-yellow-400 md:text-8xl">
             SERVICES
           </h1>
-          <p className="text-xl md:text-2xl mb-8">
+          <p className="mb-8 text-xl md:text-2xl">
             Comprehensive dining and catering solutions
           </p>
         </div>

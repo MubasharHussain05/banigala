@@ -2,6 +2,11 @@ import { Button } from '@/components/ui/button';
 import punjabiFoodImg from '@assets/images/punjabifood.png';
 import badshahiImg from '@assets/images/badshahi.png';
 import culturalImg from '@assets/images/havaliindian.png';
+import culturalImg1 from '@assets/images/havali.png';
+import culturalImg2 from '@assets/images/pakfood1.png';
+import culturalImg3 from '@assets/images/event.png';
+import culturalImg4 from '@assets/images/qila.png';
+
 
 export default function AboutSection() {
   return (
@@ -21,7 +26,7 @@ export default function AboutSection() {
             <img
               src={badshahiImg}
               alt="Badshahi Mosque"
-              className="object-cover w-full h-full opacity-70"
+              className="w-full h-full  opacity-70"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30" />
           </div>
@@ -57,8 +62,8 @@ export default function AboutSection() {
             backgroundAttachment: 'fixed',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
-      </div>
+       
+       </div>
 
       {/* //part 2 */}
 
@@ -77,7 +82,7 @@ export default function AboutSection() {
           <div className="relative z-10 flex items-center h-[800px] p-8 text-white">
             <div className="mt-8 space-y-6">
               <h2 className="font-serif text-4xl font-bold text-yellow-400 md:text-5xl">
-                The Finest Pakistani Cuisine
+                Banigala Resturant and Takeaways
               </h2>
               <div className="space-y-4">
                 <p className="text-lg leading-relaxed">
@@ -98,7 +103,7 @@ export default function AboutSection() {
 
         <div className="relative">
           <img
-            src={punjabiFoodImg}
+            src={culturalImg2}
             alt="Traditional Pakistani Food"
             className="w-full h-[800px] object-cover"
             data-testid="img-food"
@@ -111,20 +116,19 @@ export default function AboutSection() {
         <div
           className="absolute inset-0 bg-center bg-cover"
           style={{
-            backgroundImage: `url(${culturalImg})`,
+            backgroundImage: `url(${culturalImg2})`,
             backgroundAttachment: 'fixed',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
-      </div>
+              </div>
 
       {/* part 3 */}
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="relative">
           <img
-            src={punjabiFoodImg}
+            src={culturalImg4}
             alt="Traditional Pakistani Food"
-            className="w-full h-[800px] object-cover"
+            className="w-full h-[800px] "
             data-testid="img-food"
           />
         </div>
@@ -166,12 +170,11 @@ export default function AboutSection() {
         <div
           className="absolute inset-0 bg-center bg-cover"
           style={{
-            backgroundImage: `url(${culturalImg})`,
+            backgroundImage: `url(${culturalImg3})`,
             backgroundAttachment: 'fixed',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
-      </div>
+              </div>
       
     </section>
   );
